@@ -10,8 +10,26 @@
 
 const wrapAfter40Chars = (paragraph) => {
   // Your code here
+  if (paragraph.length <= 40) {
+    return paragraph;
+  } else {
+    let newLine = "\n";
+    let str = paragraph.split("");
+    let answer = "";
+    for (let i = 0; i < str.length; i++) {
+      if ((i + 1) % 40 === 0 && i !== 0) {
+        answer += str[i];
+        if (str[i + 1] === " ") {
+          i++;
+        }
+        answer += newLine;
+      } else {
+        answer += str[i];
+      }
+    }
+    return answer;
+  }
 };
-
 // Part 2 - Test
 // --------------
 // Test your function.

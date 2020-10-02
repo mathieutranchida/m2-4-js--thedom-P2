@@ -9,6 +9,14 @@
 
 const addNumbers = (...nums) => {
   // Insert missing solution please
+  if (nums.length === 0) {
+    return undefined;
+  }
+  let sum = 0;
+  nums.forEach((number) => {
+    sum += number * number;
+  });
+  return sum;
 };
 
 // Part 2 - Test
